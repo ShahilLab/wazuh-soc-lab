@@ -1,0 +1,52 @@
+{
+    "timestamp": "2026-10-13T06:54:16.718+0000",
+    "rule": {
+        "level": 10,
+        "description": "Possible brute-force: 5+ failed logins in 60 seconds",
+        "id": "100021",
+        "mitre": {
+            "id": [
+                "T1110.001"
+            ],
+            "tactic": [
+                "Credential Access"
+            ],
+            "technique": [
+                "Password Guessing"
+            ]
+        },
+        "frequency": 5,
+        "firedtimes": 1,
+        "mail": false,
+        "groups": [
+            "local",
+            "brute_force"
+        ]
+    },
+    "agent": {
+        "id": "001",
+        "name": "Kali_agent",
+        "ip": "x.x.x.x"
+    },
+    "manager": {
+        "name": "wazuh.manager"
+    },
+    "id": "1791874456.2070698",
+    "previous_output": "Oct 13 06:54:10 lab-user sshd-session[15848]: Failed password for lab-user from x.x.x.x port 64927 ssh2\nOct 13 06:54:01 lab-user sshd-session[15689]: Failed password for lab-user from x.x.x.x port 64900 ssh2\nOct 13 06:53:58 lab-user sshd-session[15689]: Failed password for lab-user from x.x.x.x port 64900 ssh2\nOct 13 06:53:54 lab-user sshd-session[15689]: Failed password for lab-user from x.x.x.x port 64900 ssh2",
+    "full_log": "Oct 13 06:54:15 lab-user sshd-session[15848]: Failed password for lab-user from x.x.x.x port 64927 ssh2",
+    "predecoder": {
+        "program_name": "sshd-session",
+        "timestamp": "Oct 13 06:54:15",
+        "hostname": "lab-user"
+    },
+    "decoder": {
+        "parent": "sshd",
+        "name": "sshd"
+    },
+    "data": {
+        "srcip": "x.x.x.x",
+        "srcport": "64927",
+        "dstuser": "lab-user"
+    },
+    "location": "journald"
+}

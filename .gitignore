@@ -1,0 +1,6 @@
+# never publish keys, certificates or passwords
+*.key
+*.pem
+.env
+*password*
+*secret*
